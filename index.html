@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AgriDoc</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="app">
+            <div class="header">
+                <div class="logo">
+                    <span style="color: var(--primary-color)">
+                        Agri<span style="color: var(--text-color)">Doc </span>
+                    </span>
+                </div>
+                <div class="text">
+                    <span> Where AI meets the field - (Prototype) </span>
+                    <span>
+                        Upload a photo, describe your problem (optional) and get information about the disease and
+                        treatment.
+                    </span>
+                </div>
+            </div>
+
+            <div class="grid">
+                <!-- Upload Section -->
+                <div class="card">
+                    <div class="upload-section">
+                        <div class="card-text">Upload Section</div>
+                        <div class="drop" id="dropZone" for="filePicker">
+                            <div id="dropText">
+                                <div style="font-weight: 600">Drag & Drop</div>
+                                <span class="small">JPEG/PNG, up to 10 MB</span>
+                            </div>
+                            <div id="imagePreview" class="image-preview">
+                                <img id="previewImage" src="" alt="Image Preview" />
+                            </div>
+                        </div>
+                        <label class="btn" id="upload" for="filePicker">Choose Image
+                            <input type="file" accept="image/*" id="filePicker" hidden />
+                        </label>
+                        <div style="margin-top: 6px;">
+                            <label for="extra">Additional prompt (optional)</label>
+                            <textarea id="extra"
+                                placeholder="e.g., 'The leaves are yellowing at the bottom.'"></textarea>
+                        </div>
+
+                        <div class="controls" style="margin-top: 6px">
+                            <button id="generateBtn" class="btn">Analyze</button>
+                            <button id="clearBtn" class="download" id="clearBtn">Clear</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Result Section -->
+                <div class="card">
+                    <div class="result-section">
+                        <div class="card-text">Result Section</div>
+                        <div class="result-area" id="results">
+                            <!-- Spinner container -->
+                            <div class="spinner-container" id="spinnerContainer">
+                                <div class="spinner"></div>
+                            </div>
+                            <!-- Updated Result Box -->
+                            <div class="result-box" id="resultBox">
+                                <div id="resultContent"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer><span>© 2025 BrainCraft_4.0. All Rights Reserved.</span></footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
